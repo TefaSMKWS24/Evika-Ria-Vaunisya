@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class kasircontroller extends Controller
+class pelanggancontroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -51,22 +51,7 @@ class kasircontroller extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $request->validate([
-            'nama_kasir' => 'required',
-            'shift_mulai' => 'required',
-            'shift_selesai' => 'required',
-            'nohp' => 'required',
-        ]);
-
-        $data = [
-            'nama_kasir' => $request->nama_kasir,
-            'shift_mulai' => $request->shift_mulai,
-            'shift_selesai' => $request->shift_selesai,
-            'nohp' => $request->nohp,
-        ];
-
-        DB::table('kasir')->where('kode_kasir', $id)->update($data);
-        return redirect()->route('kasir.index');
+        //
     }
 
     /**
@@ -74,7 +59,6 @@ class kasircontroller extends Controller
      */
     public function destroy(string $id)
     {
-        DB::table('kasir')->where('kode_kasir', $id)->delete();
-        return redirect()->view('kasir.index');
+        //
     }
 }
