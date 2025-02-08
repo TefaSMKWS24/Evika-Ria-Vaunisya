@@ -21,7 +21,8 @@ else{
     echo "Login gagal";
     //return redirect('/user')->with('warning', 'NIS /password salah!');
     }
-public function logoutkasir()
+    }
+public function logoutadmin()
 {
     if(Auth::guard('kasir')->check()){
         Auth::guard('kasir')->logout();
