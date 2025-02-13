@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\GuestController;
 
 use App\Htpp\Controllers\Barangcontroller;
 use App\Htpp\Controllers\Kasircontroller;
@@ -51,11 +53,11 @@ Route::middleware(['auth:admin'])->group(function (){
     Route::get('admin/dashboard', [DashboardAdminController::class, 'dashboard']);
     Route::get('admin/logout', [AuthController::class, 'logoutadmin']);
 
-    Route::resource('admin', BarangController::class);
-    Route::resource('kasir', kasircontroller::class);
-    Route::resource('kategori', Kategoricontroller::class);
-    Route::resource('transaksi', Transaksicontroller::class);
-    Route::resource('pelanggan', Pelanggancontroller::class);
+   // Route::resource('admin', BarangController::class);
+   // Route::resource('kasir', kasircontroller::class);
+   // Route::resource('kategori', Kategoricontroller::class);
+   // Route::resource('transaksi', Transaksicontroller::class);
+   // Route::resource('pelanggan', Pelanggancontroller::class);
 
 });
 

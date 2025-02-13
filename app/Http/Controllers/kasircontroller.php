@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use illuminate\Support\Facades\DB;
+use illuminate\Support\Facades\Redirect;
+use illuminate\Support\Facades\Validator;
+
 class kasircontroller extends Controller
 {
     /**
@@ -11,7 +15,7 @@ class kasircontroller extends Controller
      */
     public function index()
     {
-        //
+        return view('kasir.index');
     }
 
     /**
@@ -19,7 +23,7 @@ class kasircontroller extends Controller
      */
     public function create()
     {
-        //
+        return view('kasir.create');
     }
 
     /**
@@ -43,7 +47,8 @@ class kasircontroller extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $kasir = DB::table('kasir')->where('kode_kasir', $id)->first();
+        return view('kasir.edit', compact('kasir'));
     }
 
     /**
